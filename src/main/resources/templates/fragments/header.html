@@ -1,0 +1,78 @@
+<style type="text/css">
+    .titleSpace {
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        font-size: x-large;
+        text-decoration: none !important;
+    }
+    .navClasses {
+        justify-content: center !important;
+        text-decoration: none;
+    }
+</style>
+<div class="container" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.w3.org/1999/xhtml">
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 pt-1">
+                <img src="https://mpng.subpng.com/20190728/lyx/kisspng-house-openclipart-silhouette-line-art-drawing-zervas-law-offices-5d3d1f519c3b13.2498477615642868016399.jpg" width="40px" alt="">
+            </div>
+            <div class="col-4 text-center">
+                <a class="blog-header-logo text-dark titleSpace" href="/">Reserve your Space</a>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="btn btn-outline-secondary btn-sm" href="/login" sec:authorize="!isAuthenticated()">
+                        Login
+                    </a>
+                    <a class="btn btn-outline-secondary btn-sm" href="/logout" sec:authorize="isAuthenticated()">
+                        Logout
+                    </a>
+            </div>
+        </div>
+    </header>
+    <div class="nav-scroller py-1 mb-2" id="navbarsExampleDefault">
+        <nav class="navbar nav sticky-top navbar-expand-md d-flex navClasses">
+<!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"-->
+<!--                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+                <!--            <a class="navbar-brand" href="/home">-->
+<!--                <img src="https://mpng.subpng.com/20190728/lyx/kisspng-house-openclipart-silhouette-line-art-drawing-zervas-law-offices-5d3d1f519c3b13.2498477615642868016399.jpg" width="40px" class="d-inline-block align-top" alt="">-->
+<!--                Reserve your Space!-->
+<!--            </a>-->
+<!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"-->
+<!--                    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+            <a class="p-2 text-black" href="/spaces">
+                <!--                            <i class="fa-solid fa-house-building" style="color: white;"></i>-->
+
+                Spaces
+            </a>
+
+<!--            <a class="p-2 text-muted" href="/reserve">-->
+<!--                &lt;!&ndash;                            <i class="fa-solid fa-house-building" style="color: white;"></i>&ndash;&gt;-->
+<!--                &lt;!&ndash;                            <i class="fa-regular fa-house-building" style="color: white;"></i>&ndash;&gt;-->
+<!--                Reserve a Space-->
+<!--            </a>-->
+            <a class="p-2 text-muted" href="/gallery">
+                Gallery
+            </a>
+            <a class="p-2 text-muted" href="/mySpaces">
+                Reserved Spaces
+            </a>
+
+
+                <!--                <form class="form-inline my-2 my-lg-0">-->
+                <!--                    <div class="input-group input-group-sm">-->
+                <!--                        <input type="text" class="form-control" aria-label="Small"-->
+                <!--                               aria-describedby="inputGroup-sizing-sm"-->
+                <!--                               placeholder="Search...">-->
+                <!--                        <div class="input-group-append">-->
+                <!--                            <button type="button" class="btn btn-secondary btn-number">-->
+                <!--                                <i class="fa fa-search"></i>-->
+                <!--                            </button>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </form>-->
+        </nav>
+    </div>
+</div>

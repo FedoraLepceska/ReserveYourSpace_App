@@ -1,0 +1,35 @@
+<style>
+    .or{
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+        font-size: x-large;
+        text-decoration: none !important;
+    }
+</style>
+<div class="container p-xxl-4" xmlns:th="http://www.thymeleaf.org">
+    <form class="form-signin" method="post" action="/login">
+        <div class="d-flex justify-content-center mt-xxl-3">
+            <button class="btn btn-outline-primary" th:href="@{/oauth2/authorization/facebook}">Login with Facebook</button>
+        </div>
+        <div class="d-flex justify-content-center m-2 or">
+            Or
+        </div>
+        <h2 class="form-signin-heading">Sign in</h2>
+        <p>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+                   autofocus="">
+        </p>
+        <p>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password"
+                   required="">
+        </p>
+
+        <div>
+            <div th:text="${param.error}" class="text-danger"></div>
+        </div>
+
+        <button id="submit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+    <button href="/register" class="btn btn-block btn-outline-light text-dark">Register here</button>
+</div>

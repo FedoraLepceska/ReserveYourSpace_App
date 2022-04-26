@@ -1,0 +1,52 @@
+<div xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h3 class="jumbotron-heading">All spaces</h3>
+        </div>
+    </section>
+
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-lg-4 mb-3 d-flex align-items-stretch" th:each="space : ${spaces}">
+                <div class="card" style="margin: 10px">
+                    <img class="card-img-top" th:src="${space.getUrl()}" style="width: 100%"/>
+                    <div class="card-body d-flex flex-column">
+                        <h5 th:text="${space.getName()}" class="card-title"></h5>
+                        <h6 th:text="${space.getSpaceType()}" class="card-title"></h6>
+                        <p th:text="${space.getAddress()}" class="card-text"></p>
+                        <div class="card-footer">
+                            <form th:action="@{'/mySpaces/add-user-space/{id}' (id=${space.getId()})}"
+                                  th:method="POST">
+                                <button type="submit" class="btn btn-sm btn-secondary col">
+                                    Reserve Space
+                                </button>
+                            </form>
+                            <th:block sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{'/spaces/edit-form/{id}' (id=${space.getId()})}"
+                                   class="btn btn-sm btn-primary col">Edit
+                                </a>
+                            </th:block>
+                            <form th:action="@{'/spaces/delete/{id}' (id=${space.getId()})}"
+                                  th:method="DELETE" sec:authorize="hasRole('ROLE_ADMIN')" class="col">
+                                <button type="submit"
+                                        class="btn btn-sm btn-danger col">Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col mb-3">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <a href="/spaces/add-form" class="btn btn-block btn-dark add-product-btn">
+                    Add new space
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
